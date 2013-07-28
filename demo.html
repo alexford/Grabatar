@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Grabatar.js Demo</title>
+		<script src='grabatar.min.js'></script>
+	</head>
+	<body>
+		<h1>Grabatar.js Examples</h1>
+
+		<h2>Minimal</h2>
+		<pre>Grabatar.src('alex@cratercreative.com')</pre>
+		<script>
+			document.write("<img src='" + Grabatar.src('alex@cratercreative.com')+"' />");
+		</script>
+
+		<hr/>
+		<h2>Set size</h2>
+		<pre>Grabatar.src('alex@cratercreative.com',125)</pre>
+		<script>
+			document.write("<img src='" + Grabatar.src('alex@cratercreative.com',125)+"' />");
+		</script>
+		
+		<hr/>
+		<h2>Use HTTPS</h2>
+		<pre>Grabatar.setup({ secure: true });
+Grabatar.src('alex@cratercreative.com')</pre>
+		<script>
+			Grabatar.setup({
+				secure: true
+			});
+			document.write("<img src='" + Grabatar.src('alex@cratercreative.com')+"' />");
+		</script>
+
+		<hr/>
+		<h2>Set default / fallback parameter</h2>
+		<p>Set's the <code>d</code> parameter as specified <a href='https://en.gravatar.com/site/implement/images/' target='_blank'>by Gravatar</a></p>
+
+		<pre>Grabatar.setup({ d:
+	'monsterid'
+});
+Grabatar.src('doesnt@exist.com')</pre>
+		<script>
+			Grabatar.setup({
+				d: 'monsterid'
+			});
+			document.write("<img src='" + Grabatar.src('doesnt@exist.com')+"' />");
+		</script>
+
+	</body>
+	
+</html>
