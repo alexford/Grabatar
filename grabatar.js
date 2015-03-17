@@ -22,12 +22,7 @@ window.Grabatar = {
     var cacheHash = email + size + (this.options.secure ? "s" : "");
 
     if (!this.urls[cacheHash]) {
-      var url;
-      if (this.options.secure) {
-        url = "https://secure.gravatar.com/avatar/";
-      } else {
-        url = "http://www.gravatar.com/avatar/";
-      }
+      var url = (this.options.secure ? 'https://secure' : 'http://www') + '.gravatar.com/avatar/'
       url+=md5(email)+'?d='+encodeURIComponent(this.options.d);
       if (size) {
         url+=('&s='+size);
